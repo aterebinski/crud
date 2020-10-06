@@ -1,7 +1,7 @@
 <h3><%= @post.title %></h3>
 
-<p><%= @post.body %></p>
+<%= simple_format @post.body %>
 
-<p><cite><%= @post.author %></cite></p>
+<p><%= post_footer(@post) %></p>
 
 <%= link_to "Wróć do listy", posts_path %>
