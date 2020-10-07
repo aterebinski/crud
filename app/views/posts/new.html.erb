@@ -1,21 +1,3 @@
-<%= form_with model: @post do |f| %>
-  <div class="form-group">
-    <%= f.label :title, "Tytuł" %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :author, "Autor" %>
-    <%= f.text_field :author, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :body, "Treść" %>
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :published, "Opublikowany" %>
-    <%= f.check_box :published, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Zatwierdź", class: "form-control btn btn-primary" %>
-  </div>
-<% end %>
+<h3>Dodaj nowy wpis:</h3>
+
+<%= render partial: "addedit", locals: {button_name: "Dodaj posta"} %>

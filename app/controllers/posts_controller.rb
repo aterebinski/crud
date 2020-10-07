@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(create_post_params)
+    @post = Post.new(post_params)
     @post.save
     session[:author] = @post.author
     flash[:notice] = "Rekord dodany poprawnie!"
@@ -17,9 +17,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update!(post_params)
+    flash[:notice] = "Wpis został zaktualizowany"
+    redirect_to posts_path
   end
 
   def show
@@ -29,7 +34,7 @@ class PostsController < ApplicationController
   def destroy
   end
 
-  def create_post_params
+  def post_params
     params.require(:post).permit(:title, :author, :body, :published )
   end
 

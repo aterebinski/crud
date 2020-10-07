@@ -1,0 +1,21 @@
+<%= form_with model: @post do |p| %>
+  <div class="form-group">
+    <%= p.label :title, "Tytuł" %>
+    <%= p.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= p.label :author, "Autor" %>
+    <%= p.text_field :author, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= p.label :body, "Treść" %>
+    <%= p.text_area :body, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= p.label :published, "Opublikowany?" %>
+    <%= p.check_box :published, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= p.submit button_name, class: "btn btn-primary" %>
+  </div>
+<% end %>
