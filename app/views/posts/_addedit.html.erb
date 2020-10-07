@@ -1,3 +1,13 @@
+<% if @post.errors.present?%>
+  <div class="alert alert-danger">
+    <p>Znaleźliśmy następujące błędy:</p>
+    <ul>
+      <% @post.errors.full_messages.each  do |message| %>
+        <li><%= message.titleize %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_with model: @post do |p| %>
   <div class="form-group">
     <%= p.label :title, "Tytuł" %>
